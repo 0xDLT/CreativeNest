@@ -4,6 +4,7 @@
 <?php
 require 'connect.php';
 
+
 if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // Retrieve form data
     $username = trim($_POST['username']);
