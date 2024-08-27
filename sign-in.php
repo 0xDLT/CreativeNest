@@ -1,5 +1,36 @@
 <?php include 'head.html'; ?>
-<?php include 'connect.php'; ?>
+
+
+<?php
+require 'connect.php';
+
+if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+    // Retrieve form data
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    
+    // Prepare SQL query to select user
+    $sql = "SELECT password FROM users WHERE username = :username";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    
+    // Fetch the stored password
+    $storedPassword = $stmt->fetchColumn();
+    
+    if ($storedPassword && $password === $storedPassword) {
+        // Password is correct, start session and redirect
+        session_start();
+        $_SESSION['username'] = $username;
+        
+        header('Location: welcome.php');
+        exit;
+    } else {
+        echo "<h1 style='color: red;'>Invalid username or password.</h1>";
+    }
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +42,7 @@
 </head>
 <body>
     <dev class="main">
-        <form action="sgin-in.php" method="post">
+        <form action="sign-in.php" method="post">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" required>
             
