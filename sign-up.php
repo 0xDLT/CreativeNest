@@ -1,4 +1,6 @@
 <?php include 'head.html'; ?>
+
+
 <?php
 require 'connect.php';
 
