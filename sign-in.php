@@ -1,6 +1,13 @@
 <?php include 'head.php'; ?>
 
 <?php
+// Check if the user is already logged in
+if (isset($_SESSION['username'])) {
+    // Redirect to profile page if user is already logged in
+    header('Location: profile.php');
+    exit;
+}
+
 require 'connect.php';
 
 
