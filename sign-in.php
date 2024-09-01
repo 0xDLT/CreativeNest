@@ -1,5 +1,4 @@
-<?php include 'head.html'; ?>
-
+<?php include 'head.php'; ?>
 
 <?php
 require 'connect.php';
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         session_start();
         $_SESSION['username'] = $username;
         
-        header('Location: welcome.php');
+        header('Location: profile.php');
         exit;
     } else {
         echo "<h1 style='color: red;'>Invalid username or password.</h1>";
