@@ -28,9 +28,10 @@ if (isset($_SESSION)) {
                 <?php if (!isset($_SESSION['username'])): ?>
                         <li><a href="sign-in.php">Login</a></li>
                     <?php else: ?>
-                        <li><a href="profile.php">Profile</a></li>
+                        <li><?php if (isset($_SESSION['username'])): ?>
+                            <a href="profile.php?username=<?php echo urlencode($_SESSION['username']); ?>" class="profile-button">Profile</a></li>
+                        <?php endif; ?>
                     <?php endif; ?>
-    
                 <li><a href="posts.php">Posts</a></li>
                 <li><a href="artists.html">Artists</a></li>
                 <li><a href="tags.html">Tags</a></li>
