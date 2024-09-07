@@ -39,7 +39,7 @@ if (isset($_GET['username'])) {
         <div class="profile-header">
             <div class="profile-left">
                 <div class="profile-image">
-                    <img src="img/default_php.png" alt="Profile Image">
+                    <img src="img/defualt_php.png" alt="Profile Image">
                 </div>
                 <button class="follow-button">Follow</button>
             </div>
