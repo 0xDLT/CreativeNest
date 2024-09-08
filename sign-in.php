@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         session_start();
         $_SESSION['username'] = $username;
         
-        header('Location: profile.php');
+        header('Location: profile.php?username=' . urlencode($username));
         exit;
     } else {
         echo "<h1 style='color: red;'>Invalid username or password.</h1>";
