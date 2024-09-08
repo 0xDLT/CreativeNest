@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 
 <pre>
 <?php
@@ -35,7 +35,7 @@ if (isset($_SESSION)) {
                 <li><a href="posts.php">Posts</a></li>
                 <li><a href="artists.html">Artists</a></li>
                 <li><a href="tags.html">Tags</a></li>
-
+                <li><a href="users.php">Users</a></li>
                 <?php if (isset($_SESSION['username'])): ?>
                     <li><a href="sign-out.php">Sign-out</a></li>
                 <?php endif; ?>

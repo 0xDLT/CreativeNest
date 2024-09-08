@@ -1,7 +1,5 @@
 <?php
-// profile.php
-
-include 'connect.php'; // Include your database connection file
+include 'connect.php';
 
 // Check if 'username' is set in the URL
 if (isset($_GET['username'])) {
