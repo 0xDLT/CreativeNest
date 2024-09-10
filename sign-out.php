@@ -14,7 +14,7 @@ if (ini_get("session.use_cookies")) {
         $params["path"], // Path where the cookie is available
         $params["domain"], // Domain where the cookie is available
         $params["secure"], // Secure flag (true if the cookie should only be sent over HTTPS)
-        $params["httponly"] // HttpOnly flag (true if the cookie should not be accessible via JavaScript)
+        $params["httponly"],
     );
 }
 
