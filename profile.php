@@ -60,9 +60,10 @@ if (isset($_GET['username'])) {
                     <!-- Conditionally display the edit button if viewing own profile -->
                     <?php if ($username === $loggedInUsername): ?>
                         <button class="edit-button" onclick="window.location.href='edit_profile.php?username=<?php echo urlencode($username); ?>'">Edit Profile</button>
-                    <?php endif; ?>
+                    <?php else: ?>
                     <button class="block-button">Block</button>
                     <button class="report-button">Report</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
